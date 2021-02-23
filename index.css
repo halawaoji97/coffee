@@ -1,0 +1,242 @@
+/* font-family: 'Montserrat', sans-serif; */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+header {
+    height: 80px;
+    box-shadow: 0 7px 100px rgba(0, 0, 0, 0.2);
+    background-color: #FCFCFF;
+    z-index: 1;
+    position: relative;
+}
+
+.container-navbar {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.container-navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    width: 60%;
+}
+
+ul li {
+    display: block;
+    height: 30px;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ee7239;
+    border-radius: 16px;
+    transition: transform .5s ease-in-out;
+    transform: scale(0, 1);
+    z-index: -1;
+}
+
+ul li:hover::before {
+    transform: scale(1, 1);
+}
+
+ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #131844;
+    line-height: 30px;
+    font-weight: 300;
+    z-index: 99;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 550px;
+}
+
+.hero .hero-title {
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    animation: animationText 1.5s ease-out alternate forwards;
+    transform-origin: left;
+}
+
+.hero .hero-title h1 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.hero .hero-title .btn-title {
+    margin-top: 50px;
+    border-radius: 16px;
+    background-color: #ee7239;
+}
+
+.hero .hero-title .btn-title a {
+    font-size: 18px;
+    padding: 10px 35px;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.hero .hero-title h1 span {
+    font-weight: 700;
+}
+
+.hero .hero-image {
+    position: relative;
+    width: 490px;
+    height: 340px;
+}
+
+.hero .hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    animation: animationImg 1.5s ease-out alternate forwards;
+    transform-origin: left;
+}
+
+@keyframes animationImg {
+    0% {
+        transform: translateX(100%) scaleX(0);
+    }
+
+    100% {
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+}
+
+@keyframes animationText {
+    0% {
+        transform: translateY(100%) scaleY(0);
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+}
+
+.our-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+}
+
+.our-products .title {
+    width: 90%;
+    margin: auto;
+}
+
+.our-products .title h3 {
+    font-size: 28px;
+    color: #131844;
+    font-weight: 500;
+}
+
+.our-products .products {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-products .products .item {
+    width: 289px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.our-products .products .item img {
+    transform: rotateY(180deg);
+    cursor: pointer;
+    width: 100%;
+}
+
+.our-products .products .item img:hover {
+    animation: animationProduct 1.5s ease-out alternate forwards;
+}
+
+.our-products .products .item .name {
+    font-size: 18px;
+    color: #131844;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.our-products .products .item p {
+    font-size: 16px;
+    color: #8f8f8f;
+    font-weight: 300;
+}
+
+.btn-add {
+    margin-top: 20px;
+    border-radius: 16px;
+    background-color: #ee7239;
+}
+
+
+
+.btn-add a {
+    font-size: 18px;
+    padding: 8px 25px;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    font-size: 16px;
+    color: #8f8f8f;
+    font-weight: 300;
+    margin: 40px 0;
+}
+
+
+
+@keyframes animationProduct {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
